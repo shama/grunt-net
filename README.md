@@ -20,7 +20,12 @@ the following in a `Gruntfile.js`:
 
 ```javascript
 grunt.initConfig({
-  net: { },
+  net: {
+    server: {
+      host: 'example.com',
+      port: 5004
+    }
+  },
   jshint: {
     files: ['Gruntfile.js', 'tasks/*.js'],
     options: { jshintrc: '.jshintrc' }
