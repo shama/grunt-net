@@ -58,10 +58,7 @@ and the output will be streamed to your local terminal.
 ## Example Output
 
 ```
-$ grunt
-Running "jshint:files" (jshint) task
->> 2 files lint free.
-
+$ grunt net
 Running "net:devserver" (net) task
 Connected to server [localhost:5004], running tasks: jshint...
 --------------------------------------------------------------------------------
