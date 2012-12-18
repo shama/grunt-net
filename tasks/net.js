@@ -20,15 +20,16 @@ module.exports = function(grunt) {
     var done = this.async();
 
     // spawn tasks
-    function spawnTasks(tasks, inc, cb) {
+    function spawn(args, inc, cb) {
       if (arguments.length === 2) {
         cb = inc;
         inc = function(err, buf) {};
       }
-      grunt.log.ok('Client running tasks: ' + tasks.join(', '));
+      grunt.log.ok('Client running: grunt ' + args.join(' '));
+      // we could just pass spawn to dnode but that seems dangerous >:O
       var spawned = grunt.util.spawn({
         grunt: true,
-        args: tasks
+        args: args
       }, cb);
       spawned.stdout.on('data', function(buf) { inc(null, String(buf)); });
       spawned.stderr.on('data', function(buf) { inc(new Error(String(buf))); });
@@ -37,7 +38,7 @@ module.exports = function(grunt) {
     // create a server
     function createServer() {
       grunt.log.ok('Registered as a grunt-net server [' + host + ':' + port + '].');
-      dnode({ run: spawnTasks }).listen(host, port);
+      dnode({ spawn: spawn }).listen(host, port);
     }
 
     // prints an 80 char line
@@ -63,7 +64,10 @@ module.exports = function(grunt) {
       }
       grunt.log.writeln('Connected to server [' + host + ':' + port + '], running tasks: ' + tasks.join(', ') + '...');
       printLine();
-      server.run(tasks, function(err, buf) {
+      // get process.argv options without grunt.cli.tasks
+      var cliArgs = grunt.util._.without.apply(null, [[].slice.call(process.argv, 2)].concat(grunt.cli.tasks));
+      // spawn child processes on remote server lol
+      server.spawn(grunt.util._.union(tasks, cliArgs), function(err, buf) {
         // incremental updates from server
         grunt.log.write('  ');
         if (err) {
