@@ -1,7 +1,7 @@
 {
   "name": "grunt-net",
   "description": "Run grunt tasks over a network",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/shama/grunt-net",
   "author": {
     "name": "Kyle Robinson Young",
@@ -31,9 +31,9 @@
     "dnode": "~1.0.2"
   },
   "devDependencies": {
-    "grunt-contrib-jshint": "~0.1.0",
-    "grunt": "~0.4.0rc3",
-    "grunt-contrib-watch": "~0.1.4"
+    "grunt-contrib-jshint": "~0.1.1",
+    "grunt": "~0.4.0",
+    "grunt-contrib-watch": "~0.2.0"
   },
   "keywords": [
     "gruntplugin"
