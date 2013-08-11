@@ -28,12 +28,12 @@
     "test": "grunt nodeunit -v"
   },
   "dependencies": {
-    "dnode": "~1.0.2"
+    "dnode": "~1.0.5"
   },
   "devDependencies": {
-    "grunt-contrib-jshint": "~0.1.1",
+    "grunt-contrib-jshint": "~0.6.2",
     "grunt": "~0.4.0",
-    "grunt-contrib-watch": "~0.2.0"
+    "grunt-contrib-watch": "~0.5.1"
   },
   "keywords": [
     "gruntplugin"
