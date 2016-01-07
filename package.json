@@ -1,7 +1,7 @@
 {
   "name": "grunt-net",
   "description": "Run grunt tasks over a network",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "homepage": "https://github.com/shama/grunt-net",
   "author": {
     "name": "Kyle Robinson Young",
