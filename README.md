@@ -76,12 +76,13 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 Lint and test your code using [grunt][grunt].
 
 ## Release History
+* 1.0.0 - Update dependencies to work with newer versions of node.
 * 0.1.2 - Grunt v0.4 support.
 * 0.1.1 - Pass client cli args along to server
 * 0.1.0 - Initial release
 
 ## License
-Copyright (c) 2012 Kyle Robinson Young
+Copyright (c) 2016 Kyle Robinson Young
 Licensed under the MIT license.
 
 
